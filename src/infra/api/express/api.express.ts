@@ -2,8 +2,7 @@ import { Api } from "../api";
 import express, { Express } from "express";
 import { Route } from "./routes/route";
 import cookieParser from "cookie-parser";
-
-
+import { handleErrors } from "../../../middleware/handle-errors";
 
 export class ApiExpress implements Api {
     declare public app: Express;
@@ -13,13 +12,13 @@ export class ApiExpress implements Api {
         this.app.use(express.json());
         this.app.use(cookieParser());
 
-        this.addRoutes(routes)
-    };
-
-    public static build(routes: Array<Route>) {
-        return new ApiExpress(routes)
+        this.addRoutes(routes);
+        this.app.use(handleErrors());
     }
 
+    public static build(routes: Array<Route>) {
+        return new ApiExpress(routes);
+    }
 
     public getAppExpress() {
         return this.app;
@@ -32,10 +31,9 @@ export class ApiExpress implements Api {
             const middlewares = route.getMiddlewares().map((mid) => mid.handle);
 
             this.app[method](path, ...middlewares, handler);
-        })
-    };
-    
-    
+        });
+    }
+
     public start(port: number): void {
         throw new Error("Method not implemented.");
     }
