@@ -20,4 +20,17 @@ model User {
   password  String
   createdAt DateTime
   updatedAt DateTime @updatedAt
+
+  categories Category[]
+}
+
+model Category {
+  id        String   @id
+  name      String   @unique
+  type      String
+  color     String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  createdAt DateTime
+  updatedAt DateTime @updatedAt
 }
