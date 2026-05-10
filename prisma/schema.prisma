@@ -21,7 +21,8 @@ model User {
   createdAt DateTime
   updatedAt DateTime @updatedAt
 
-  categories Category[]
+  categories   Category[]
+  fixedExpense FixedExpense[]
 }
 
 model Category {
@@ -33,4 +34,19 @@ model Category {
   userId    String
   createdAt DateTime
   updatedAt DateTime @updatedAt
+
+  fixedExpense FixedExpense[]
+}
+
+model FixedExpense {
+  id         String   @id
+  name       String
+  amount     Float
+  dueDay     Int
+  isActive   Boolean
+  startDate  DateTime
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId     String
 }

@@ -51,3 +51,8 @@ export type User = Prisma.UserModel
  * 
  */
 export type Category = Prisma.CategoryModel
+/**
+ * Model FixedExpense
+ * 
+ */
+export type FixedExpense = Prisma.FixedExpenseModel
