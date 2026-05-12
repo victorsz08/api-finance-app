@@ -24,6 +24,10 @@ export const createFixedExpenseDto = z.object({
         .min(1, "Dia de vencimento deve ser entre 1 e 31")
         .max(31, "Dia de vencimento deve ser entre 1 e 31"),
 
+    startDate: z.coerce
+        .date()
+        .refine((d) => d <= new Date(), "Data de início não pode ser no futuro"),
+
     categoryId: z
         .string({
             error: "Categoria é obrigatória",
@@ -37,7 +41,7 @@ export const findFixedExpenseDto = z.object({
 
 export const listFixedExpenseDto = z
     .object({
-        categoryId: z.string().uuid().optional(),
+        categoryId: z.string().optional(),
         isActive: z.enum(["true", "false"]).optional(),
         month: z
             .string()
@@ -82,9 +86,9 @@ export const updateFixedExpenseDto = z.object({
         .min(1, "Dia de vencimento deve ser entre 1 e 31")
         .max(31, "Dia de vencimento deve ser entre 1 e 31"),
 
-    categoryId: z
-        .string({
-            error: "Categoria é obrigatória",
-        })
-        .uuid("categoryId inválido"),
+    categoryId: z.string({
+        error: "Categoria é obrigatória",
+    }),
+    isActive: z.boolean({ error: "Os valores do campo so podem conter true ou false" }),
+    startDate: z.coerce.date(),
 });
