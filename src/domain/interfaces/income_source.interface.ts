@@ -1,6 +1,5 @@
-import { IncomeSource } from "../entities/income_source";
+import { IncomeSource, RecurrenceType } from "../entities/income_source";
 
-export type RecurrenceType = "monthly" | "weekly" | "once";
 export type ListIncomeSourceFilters = {
     userId: string;
     categoryId?: string;

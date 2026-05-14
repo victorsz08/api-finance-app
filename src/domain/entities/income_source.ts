@@ -1,10 +1,12 @@
 import { v4 as uuid } from "uuid";
 
+export type RecurrenceType = "monthly" | "weekly" | "once";
+
 export type IncomeSourceProps = {
     id: string;
     name: string;
     amount: number;
-    recurrence: string;
+    recurrence: RecurrenceType;
     startDate: Date;
     endDate: Date;
     isActive: boolean;
