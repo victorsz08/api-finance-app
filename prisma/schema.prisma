@@ -23,6 +23,7 @@ model User {
 
   categories   Category[]
   fixedExpense FixedExpense[]
+  incomeSource IncomeSource[]
 }
 
 model Category {
@@ -36,6 +37,7 @@ model Category {
   updatedAt DateTime @updatedAt
 
   fixedExpense FixedExpense[]
+  incomeSource IncomeSource[]
 }
 
 model FixedExpense {
@@ -45,6 +47,20 @@ model FixedExpense {
   dueDay     Int
   isActive   Boolean
   startDate  DateTime
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId     String
+}
+
+model IncomeSource {
+  id         String   @id
+  name       String
+  amount     Float
+  recurrence String
+  isActive   Boolean
+  startDate  DateTime
+  endDate    DateTime
   category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   categoryId String
   user       User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)

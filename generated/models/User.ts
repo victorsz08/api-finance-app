@@ -192,6 +192,7 @@ export type UserWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   categories?: Prisma.CategoryListRelationFilter
   fixedExpense?: Prisma.FixedExpenseListRelationFilter
+  incomeSource?: Prisma.IncomeSourceListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -203,6 +204,7 @@ export type UserOrderByWithRelationInput = {
   updatedAt?: Prisma.SortOrder
   categories?: Prisma.CategoryOrderByRelationAggregateInput
   fixedExpense?: Prisma.FixedExpenseOrderByRelationAggregateInput
+  incomeSource?: Prisma.IncomeSourceOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -217,6 +219,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   categories?: Prisma.CategoryListRelationFilter
   fixedExpense?: Prisma.FixedExpenseListRelationFilter
+  incomeSource?: Prisma.IncomeSourceListRelationFilter
 }, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -252,6 +255,7 @@ export type UserCreateInput = {
   updatedAt?: Date | string
   categories?: Prisma.CategoryCreateNestedManyWithoutUserInput
   fixedExpense?: Prisma.FixedExpenseCreateNestedManyWithoutUserInput
+  incomeSource?: Prisma.IncomeSourceCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -263,6 +267,7 @@ export type UserUncheckedCreateInput = {
   updatedAt?: Date | string
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutUserInput
   fixedExpense?: Prisma.FixedExpenseUncheckedCreateNestedManyWithoutUserInput
+  incomeSource?: Prisma.IncomeSourceUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -274,6 +279,7 @@ export type UserUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   categories?: Prisma.CategoryUpdateManyWithoutUserNestedInput
   fixedExpense?: Prisma.FixedExpenseUpdateManyWithoutUserNestedInput
+  incomeSource?: Prisma.IncomeSourceUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -285,6 +291,7 @@ export type UserUncheckedUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutUserNestedInput
   fixedExpense?: Prisma.FixedExpenseUncheckedUpdateManyWithoutUserNestedInput
+  incomeSource?: Prisma.IncomeSourceUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -382,6 +389,20 @@ export type UserUpdateOneRequiredWithoutFixedExpenseNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFixedExpenseInput, Prisma.UserUpdateWithoutFixedExpenseInput>, Prisma.UserUncheckedUpdateWithoutFixedExpenseInput>
 }
 
+export type UserCreateNestedOneWithoutIncomeSourceInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutIncomeSourceInput, Prisma.UserUncheckedCreateWithoutIncomeSourceInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutIncomeSourceInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutIncomeSourceNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutIncomeSourceInput, Prisma.UserUncheckedCreateWithoutIncomeSourceInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutIncomeSourceInput
+  upsert?: Prisma.UserUpsertWithoutIncomeSourceInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutIncomeSourceInput, Prisma.UserUpdateWithoutIncomeSourceInput>, Prisma.UserUncheckedUpdateWithoutIncomeSourceInput>
+}
+
 export type UserCreateWithoutCategoriesInput = {
   id: string
   name: string
@@ -390,6 +411,7 @@ export type UserCreateWithoutCategoriesInput = {
   createdAt: Date | string
   updatedAt?: Date | string
   fixedExpense?: Prisma.FixedExpenseCreateNestedManyWithoutUserInput
+  incomeSource?: Prisma.IncomeSourceCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutCategoriesInput = {
@@ -400,6 +422,7 @@ export type UserUncheckedCreateWithoutCategoriesInput = {
   createdAt: Date | string
   updatedAt?: Date | string
   fixedExpense?: Prisma.FixedExpenseUncheckedCreateNestedManyWithoutUserInput
+  incomeSource?: Prisma.IncomeSourceUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutCategoriesInput = {
@@ -426,6 +449,7 @@ export type UserUpdateWithoutCategoriesInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   fixedExpense?: Prisma.FixedExpenseUpdateManyWithoutUserNestedInput
+  incomeSource?: Prisma.IncomeSourceUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCategoriesInput = {
@@ -436,6 +460,7 @@ export type UserUncheckedUpdateWithoutCategoriesInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   fixedExpense?: Prisma.FixedExpenseUncheckedUpdateManyWithoutUserNestedInput
+  incomeSource?: Prisma.IncomeSourceUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutFixedExpenseInput = {
@@ -446,6 +471,7 @@ export type UserCreateWithoutFixedExpenseInput = {
   createdAt: Date | string
   updatedAt?: Date | string
   categories?: Prisma.CategoryCreateNestedManyWithoutUserInput
+  incomeSource?: Prisma.IncomeSourceCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutFixedExpenseInput = {
@@ -456,6 +482,7 @@ export type UserUncheckedCreateWithoutFixedExpenseInput = {
   createdAt: Date | string
   updatedAt?: Date | string
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutUserInput
+  incomeSource?: Prisma.IncomeSourceUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutFixedExpenseInput = {
@@ -482,6 +509,7 @@ export type UserUpdateWithoutFixedExpenseInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   categories?: Prisma.CategoryUpdateManyWithoutUserNestedInput
+  incomeSource?: Prisma.IncomeSourceUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutFixedExpenseInput = {
@@ -492,6 +520,67 @@ export type UserUncheckedUpdateWithoutFixedExpenseInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutUserNestedInput
+  incomeSource?: Prisma.IncomeSourceUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutIncomeSourceInput = {
+  id: string
+  name: string
+  email: string
+  password: string
+  createdAt: Date | string
+  updatedAt?: Date | string
+  categories?: Prisma.CategoryCreateNestedManyWithoutUserInput
+  fixedExpense?: Prisma.FixedExpenseCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutIncomeSourceInput = {
+  id: string
+  name: string
+  email: string
+  password: string
+  createdAt: Date | string
+  updatedAt?: Date | string
+  categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutUserInput
+  fixedExpense?: Prisma.FixedExpenseUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutIncomeSourceInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutIncomeSourceInput, Prisma.UserUncheckedCreateWithoutIncomeSourceInput>
+}
+
+export type UserUpsertWithoutIncomeSourceInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutIncomeSourceInput, Prisma.UserUncheckedUpdateWithoutIncomeSourceInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutIncomeSourceInput, Prisma.UserUncheckedCreateWithoutIncomeSourceInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutIncomeSourceInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutIncomeSourceInput, Prisma.UserUncheckedUpdateWithoutIncomeSourceInput>
+}
+
+export type UserUpdateWithoutIncomeSourceInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  categories?: Prisma.CategoryUpdateManyWithoutUserNestedInput
+  fixedExpense?: Prisma.FixedExpenseUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutIncomeSourceInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  categories?: Prisma.CategoryUncheckedUpdateManyWithoutUserNestedInput
+  fixedExpense?: Prisma.FixedExpenseUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -502,11 +591,13 @@ export type UserUncheckedUpdateWithoutFixedExpenseInput = {
 export type UserCountOutputType = {
   categories: number
   fixedExpense: number
+  incomeSource: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   categories?: boolean | UserCountOutputTypeCountCategoriesArgs
   fixedExpense?: boolean | UserCountOutputTypeCountFixedExpenseArgs
+  incomeSource?: boolean | UserCountOutputTypeCountIncomeSourceArgs
 }
 
 /**
@@ -533,6 +624,13 @@ export type UserCountOutputTypeCountFixedExpenseArgs<ExtArgs extends runtime.Typ
   where?: Prisma.FixedExpenseWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountIncomeSourceArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.IncomeSourceWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -543,6 +641,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   updatedAt?: boolean
   categories?: boolean | Prisma.User$categoriesArgs<ExtArgs>
   fixedExpense?: boolean | Prisma.User$fixedExpenseArgs<ExtArgs>
+  incomeSource?: boolean | Prisma.User$incomeSourceArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -577,6 +676,7 @@ export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = run
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   categories?: boolean | Prisma.User$categoriesArgs<ExtArgs>
   fixedExpense?: boolean | Prisma.User$fixedExpenseArgs<ExtArgs>
+  incomeSource?: boolean | Prisma.User$incomeSourceArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -587,6 +687,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   objects: {
     categories: Prisma.$CategoryPayload<ExtArgs>[]
     fixedExpense: Prisma.$FixedExpensePayload<ExtArgs>[]
+    incomeSource: Prisma.$IncomeSourcePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -991,6 +1092,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   readonly [Symbol.toStringTag]: "PrismaPromise"
   categories<T extends Prisma.User$categoriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$categoriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   fixedExpense<T extends Prisma.User$fixedExpenseArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$fixedExpenseArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FixedExpensePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  incomeSource<T extends Prisma.User$incomeSourceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$incomeSourceArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$IncomeSourcePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1473,6 +1575,30 @@ export type User$fixedExpenseArgs<ExtArgs extends runtime.Types.Extensions.Inter
   take?: number
   skip?: number
   distinct?: Prisma.FixedExpenseScalarFieldEnum | Prisma.FixedExpenseScalarFieldEnum[]
+}
+
+/**
+ * User.incomeSource
+ */
+export type User$incomeSourceArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the IncomeSource
+   */
+  select?: Prisma.IncomeSourceSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the IncomeSource
+   */
+  omit?: Prisma.IncomeSourceOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.IncomeSourceInclude<ExtArgs> | null
+  where?: Prisma.IncomeSourceWhereInput
+  orderBy?: Prisma.IncomeSourceOrderByWithRelationInput | Prisma.IncomeSourceOrderByWithRelationInput[]
+  cursor?: Prisma.IncomeSourceWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.IncomeSourceScalarFieldEnum | Prisma.IncomeSourceScalarFieldEnum[]
 }
 
 /**

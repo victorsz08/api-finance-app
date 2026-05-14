@@ -56,3 +56,8 @@ export type Category = Prisma.CategoryModel
  * 
  */
 export type FixedExpense = Prisma.FixedExpenseModel
+/**
+ * Model IncomeSource
+ * 
+ */
+export type IncomeSource = Prisma.IncomeSourceModel

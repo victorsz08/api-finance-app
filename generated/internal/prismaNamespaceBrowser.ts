@@ -53,7 +53,8 @@ export const AnyNull = runtime.AnyNull
 export const ModelName = {
   User: 'User',
   Category: 'Category',
-  FixedExpense: 'FixedExpense'
+  FixedExpense: 'FixedExpense',
+  IncomeSource: 'IncomeSource'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -117,6 +118,21 @@ export const FixedExpenseScalarFieldEnum = {
 } as const
 
 export type FixedExpenseScalarFieldEnum = (typeof FixedExpenseScalarFieldEnum)[keyof typeof FixedExpenseScalarFieldEnum]
+
+
+export const IncomeSourceScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  amount: 'amount',
+  recurrence: 'recurrence',
+  isActive: 'isActive',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  categoryId: 'categoryId',
+  userId: 'userId'
+} as const
+
+export type IncomeSourceScalarFieldEnum = (typeof IncomeSourceScalarFieldEnum)[keyof typeof IncomeSourceScalarFieldEnum]
 
 
 export const SortOrder = {
