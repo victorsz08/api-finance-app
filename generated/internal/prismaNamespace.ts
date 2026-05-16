@@ -387,7 +387,8 @@ export const ModelName = {
   User: 'User',
   Category: 'Category',
   FixedExpense: 'FixedExpense',
-  IncomeSource: 'IncomeSource'
+  IncomeSource: 'IncomeSource',
+  OneTimeExpense: 'OneTimeExpense'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -403,7 +404,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "category" | "fixedExpense" | "incomeSource"
+    modelProps: "user" | "category" | "fixedExpense" | "incomeSource" | "oneTimeExpense"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -703,6 +704,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    OneTimeExpense: {
+      payload: Prisma.$OneTimeExpensePayload<ExtArgs>
+      fields: Prisma.OneTimeExpenseFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.OneTimeExpenseFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneTimeExpensePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.OneTimeExpenseFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneTimeExpensePayload>
+        }
+        findFirst: {
+          args: Prisma.OneTimeExpenseFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneTimeExpensePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.OneTimeExpenseFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneTimeExpensePayload>
+        }
+        findMany: {
+          args: Prisma.OneTimeExpenseFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneTimeExpensePayload>[]
+        }
+        create: {
+          args: Prisma.OneTimeExpenseCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneTimeExpensePayload>
+        }
+        createMany: {
+          args: Prisma.OneTimeExpenseCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.OneTimeExpenseCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneTimeExpensePayload>[]
+        }
+        delete: {
+          args: Prisma.OneTimeExpenseDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneTimeExpensePayload>
+        }
+        update: {
+          args: Prisma.OneTimeExpenseUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneTimeExpensePayload>
+        }
+        deleteMany: {
+          args: Prisma.OneTimeExpenseDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.OneTimeExpenseUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.OneTimeExpenseUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneTimeExpensePayload>[]
+        }
+        upsert: {
+          args: Prisma.OneTimeExpenseUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneTimeExpensePayload>
+        }
+        aggregate: {
+          args: Prisma.OneTimeExpenseAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateOneTimeExpense>
+        }
+        groupBy: {
+          args: Prisma.OneTimeExpenseGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OneTimeExpenseGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.OneTimeExpenseCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OneTimeExpenseCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -802,6 +877,19 @@ export const IncomeSourceScalarFieldEnum = {
 } as const
 
 export type IncomeSourceScalarFieldEnum = (typeof IncomeSourceScalarFieldEnum)[keyof typeof IncomeSourceScalarFieldEnum]
+
+
+export const OneTimeExpenseScalarFieldEnum = {
+  id: 'id',
+  description: 'description',
+  amount: 'amount',
+  date: 'date',
+  note: 'note',
+  categoryId: 'categoryId',
+  userId: 'userId'
+} as const
+
+export type OneTimeExpenseScalarFieldEnum = (typeof OneTimeExpenseScalarFieldEnum)[keyof typeof OneTimeExpenseScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1002,6 +1090,7 @@ export type GlobalOmitConfig = {
   category?: Prisma.CategoryOmit
   fixedExpense?: Prisma.FixedExpenseOmit
   incomeSource?: Prisma.IncomeSourceOmit
+  oneTimeExpense?: Prisma.OneTimeExpenseOmit
 }
 
 /* Types for Logging */

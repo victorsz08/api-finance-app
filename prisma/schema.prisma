@@ -21,9 +21,10 @@ model User {
   createdAt DateTime
   updatedAt DateTime @updatedAt
 
-  categories   Category[]
-  fixedExpense FixedExpense[]
-  incomeSource IncomeSource[]
+  categories     Category[]
+  fixedExpense   FixedExpense[]
+  incomeSource   IncomeSource[]
+  oneTimeExpense OneTimeExpense[]
 }
 
 model Category {
@@ -36,8 +37,9 @@ model Category {
   createdAt DateTime
   updatedAt DateTime @updatedAt
 
-  fixedExpense FixedExpense[]
-  incomeSource IncomeSource[]
+  fixedExpense   FixedExpense[]
+  incomeSource   IncomeSource[]
+  oneTimeExpense OneTimeExpense[]
 }
 
 model FixedExpense {
@@ -65,4 +67,16 @@ model IncomeSource {
   categoryId String
   user       User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId     String
+}
+
+model OneTimeExpense {
+  id          String   @id
+  description String
+  amount      Float
+  date        DateTime
+  note        String
+  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId  String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId      String
 }

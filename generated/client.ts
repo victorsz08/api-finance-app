@@ -61,3 +61,8 @@ export type FixedExpense = Prisma.FixedExpenseModel
  * 
  */
 export type IncomeSource = Prisma.IncomeSourceModel
+/**
+ * Model OneTimeExpense
+ * 
+ */
+export type OneTimeExpense = Prisma.OneTimeExpenseModel

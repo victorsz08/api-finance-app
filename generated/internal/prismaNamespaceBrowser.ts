@@ -54,7 +54,8 @@ export const ModelName = {
   User: 'User',
   Category: 'Category',
   FixedExpense: 'FixedExpense',
-  IncomeSource: 'IncomeSource'
+  IncomeSource: 'IncomeSource',
+  OneTimeExpense: 'OneTimeExpense'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -133,6 +134,19 @@ export const IncomeSourceScalarFieldEnum = {
 } as const
 
 export type IncomeSourceScalarFieldEnum = (typeof IncomeSourceScalarFieldEnum)[keyof typeof IncomeSourceScalarFieldEnum]
+
+
+export const OneTimeExpenseScalarFieldEnum = {
+  id: 'id',
+  description: 'description',
+  amount: 'amount',
+  date: 'date',
+  note: 'note',
+  categoryId: 'categoryId',
+  userId: 'userId'
+} as const
+
+export type OneTimeExpenseScalarFieldEnum = (typeof OneTimeExpenseScalarFieldEnum)[keyof typeof OneTimeExpenseScalarFieldEnum]
 
 
 export const SortOrder = {

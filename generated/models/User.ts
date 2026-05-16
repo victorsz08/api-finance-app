@@ -193,6 +193,7 @@ export type UserWhereInput = {
   categories?: Prisma.CategoryListRelationFilter
   fixedExpense?: Prisma.FixedExpenseListRelationFilter
   incomeSource?: Prisma.IncomeSourceListRelationFilter
+  oneTimeExpense?: Prisma.OneTimeExpenseListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -205,6 +206,7 @@ export type UserOrderByWithRelationInput = {
   categories?: Prisma.CategoryOrderByRelationAggregateInput
   fixedExpense?: Prisma.FixedExpenseOrderByRelationAggregateInput
   incomeSource?: Prisma.IncomeSourceOrderByRelationAggregateInput
+  oneTimeExpense?: Prisma.OneTimeExpenseOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -220,6 +222,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   categories?: Prisma.CategoryListRelationFilter
   fixedExpense?: Prisma.FixedExpenseListRelationFilter
   incomeSource?: Prisma.IncomeSourceListRelationFilter
+  oneTimeExpense?: Prisma.OneTimeExpenseListRelationFilter
 }, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -256,6 +259,7 @@ export type UserCreateInput = {
   categories?: Prisma.CategoryCreateNestedManyWithoutUserInput
   fixedExpense?: Prisma.FixedExpenseCreateNestedManyWithoutUserInput
   incomeSource?: Prisma.IncomeSourceCreateNestedManyWithoutUserInput
+  oneTimeExpense?: Prisma.OneTimeExpenseCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -268,6 +272,7 @@ export type UserUncheckedCreateInput = {
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutUserInput
   fixedExpense?: Prisma.FixedExpenseUncheckedCreateNestedManyWithoutUserInput
   incomeSource?: Prisma.IncomeSourceUncheckedCreateNestedManyWithoutUserInput
+  oneTimeExpense?: Prisma.OneTimeExpenseUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -280,6 +285,7 @@ export type UserUpdateInput = {
   categories?: Prisma.CategoryUpdateManyWithoutUserNestedInput
   fixedExpense?: Prisma.FixedExpenseUpdateManyWithoutUserNestedInput
   incomeSource?: Prisma.IncomeSourceUpdateManyWithoutUserNestedInput
+  oneTimeExpense?: Prisma.OneTimeExpenseUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -292,6 +298,7 @@ export type UserUncheckedUpdateInput = {
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutUserNestedInput
   fixedExpense?: Prisma.FixedExpenseUncheckedUpdateManyWithoutUserNestedInput
   incomeSource?: Prisma.IncomeSourceUncheckedUpdateManyWithoutUserNestedInput
+  oneTimeExpense?: Prisma.OneTimeExpenseUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -403,6 +410,20 @@ export type UserUpdateOneRequiredWithoutIncomeSourceNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutIncomeSourceInput, Prisma.UserUpdateWithoutIncomeSourceInput>, Prisma.UserUncheckedUpdateWithoutIncomeSourceInput>
 }
 
+export type UserCreateNestedOneWithoutOneTimeExpenseInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutOneTimeExpenseInput, Prisma.UserUncheckedCreateWithoutOneTimeExpenseInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutOneTimeExpenseInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutOneTimeExpenseNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutOneTimeExpenseInput, Prisma.UserUncheckedCreateWithoutOneTimeExpenseInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutOneTimeExpenseInput
+  upsert?: Prisma.UserUpsertWithoutOneTimeExpenseInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutOneTimeExpenseInput, Prisma.UserUpdateWithoutOneTimeExpenseInput>, Prisma.UserUncheckedUpdateWithoutOneTimeExpenseInput>
+}
+
 export type UserCreateWithoutCategoriesInput = {
   id: string
   name: string
@@ -412,6 +433,7 @@ export type UserCreateWithoutCategoriesInput = {
   updatedAt?: Date | string
   fixedExpense?: Prisma.FixedExpenseCreateNestedManyWithoutUserInput
   incomeSource?: Prisma.IncomeSourceCreateNestedManyWithoutUserInput
+  oneTimeExpense?: Prisma.OneTimeExpenseCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutCategoriesInput = {
@@ -423,6 +445,7 @@ export type UserUncheckedCreateWithoutCategoriesInput = {
   updatedAt?: Date | string
   fixedExpense?: Prisma.FixedExpenseUncheckedCreateNestedManyWithoutUserInput
   incomeSource?: Prisma.IncomeSourceUncheckedCreateNestedManyWithoutUserInput
+  oneTimeExpense?: Prisma.OneTimeExpenseUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutCategoriesInput = {
@@ -450,6 +473,7 @@ export type UserUpdateWithoutCategoriesInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   fixedExpense?: Prisma.FixedExpenseUpdateManyWithoutUserNestedInput
   incomeSource?: Prisma.IncomeSourceUpdateManyWithoutUserNestedInput
+  oneTimeExpense?: Prisma.OneTimeExpenseUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCategoriesInput = {
@@ -461,6 +485,7 @@ export type UserUncheckedUpdateWithoutCategoriesInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   fixedExpense?: Prisma.FixedExpenseUncheckedUpdateManyWithoutUserNestedInput
   incomeSource?: Prisma.IncomeSourceUncheckedUpdateManyWithoutUserNestedInput
+  oneTimeExpense?: Prisma.OneTimeExpenseUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutFixedExpenseInput = {
@@ -472,6 +497,7 @@ export type UserCreateWithoutFixedExpenseInput = {
   updatedAt?: Date | string
   categories?: Prisma.CategoryCreateNestedManyWithoutUserInput
   incomeSource?: Prisma.IncomeSourceCreateNestedManyWithoutUserInput
+  oneTimeExpense?: Prisma.OneTimeExpenseCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutFixedExpenseInput = {
@@ -483,6 +509,7 @@ export type UserUncheckedCreateWithoutFixedExpenseInput = {
   updatedAt?: Date | string
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutUserInput
   incomeSource?: Prisma.IncomeSourceUncheckedCreateNestedManyWithoutUserInput
+  oneTimeExpense?: Prisma.OneTimeExpenseUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutFixedExpenseInput = {
@@ -510,6 +537,7 @@ export type UserUpdateWithoutFixedExpenseInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   categories?: Prisma.CategoryUpdateManyWithoutUserNestedInput
   incomeSource?: Prisma.IncomeSourceUpdateManyWithoutUserNestedInput
+  oneTimeExpense?: Prisma.OneTimeExpenseUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutFixedExpenseInput = {
@@ -521,6 +549,7 @@ export type UserUncheckedUpdateWithoutFixedExpenseInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutUserNestedInput
   incomeSource?: Prisma.IncomeSourceUncheckedUpdateManyWithoutUserNestedInput
+  oneTimeExpense?: Prisma.OneTimeExpenseUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutIncomeSourceInput = {
@@ -532,6 +561,7 @@ export type UserCreateWithoutIncomeSourceInput = {
   updatedAt?: Date | string
   categories?: Prisma.CategoryCreateNestedManyWithoutUserInput
   fixedExpense?: Prisma.FixedExpenseCreateNestedManyWithoutUserInput
+  oneTimeExpense?: Prisma.OneTimeExpenseCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutIncomeSourceInput = {
@@ -543,6 +573,7 @@ export type UserUncheckedCreateWithoutIncomeSourceInput = {
   updatedAt?: Date | string
   categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutUserInput
   fixedExpense?: Prisma.FixedExpenseUncheckedCreateNestedManyWithoutUserInput
+  oneTimeExpense?: Prisma.OneTimeExpenseUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutIncomeSourceInput = {
@@ -570,6 +601,7 @@ export type UserUpdateWithoutIncomeSourceInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   categories?: Prisma.CategoryUpdateManyWithoutUserNestedInput
   fixedExpense?: Prisma.FixedExpenseUpdateManyWithoutUserNestedInput
+  oneTimeExpense?: Prisma.OneTimeExpenseUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutIncomeSourceInput = {
@@ -581,6 +613,71 @@ export type UserUncheckedUpdateWithoutIncomeSourceInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   categories?: Prisma.CategoryUncheckedUpdateManyWithoutUserNestedInput
   fixedExpense?: Prisma.FixedExpenseUncheckedUpdateManyWithoutUserNestedInput
+  oneTimeExpense?: Prisma.OneTimeExpenseUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutOneTimeExpenseInput = {
+  id: string
+  name: string
+  email: string
+  password: string
+  createdAt: Date | string
+  updatedAt?: Date | string
+  categories?: Prisma.CategoryCreateNestedManyWithoutUserInput
+  fixedExpense?: Prisma.FixedExpenseCreateNestedManyWithoutUserInput
+  incomeSource?: Prisma.IncomeSourceCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutOneTimeExpenseInput = {
+  id: string
+  name: string
+  email: string
+  password: string
+  createdAt: Date | string
+  updatedAt?: Date | string
+  categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutUserInput
+  fixedExpense?: Prisma.FixedExpenseUncheckedCreateNestedManyWithoutUserInput
+  incomeSource?: Prisma.IncomeSourceUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutOneTimeExpenseInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutOneTimeExpenseInput, Prisma.UserUncheckedCreateWithoutOneTimeExpenseInput>
+}
+
+export type UserUpsertWithoutOneTimeExpenseInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutOneTimeExpenseInput, Prisma.UserUncheckedUpdateWithoutOneTimeExpenseInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutOneTimeExpenseInput, Prisma.UserUncheckedCreateWithoutOneTimeExpenseInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutOneTimeExpenseInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutOneTimeExpenseInput, Prisma.UserUncheckedUpdateWithoutOneTimeExpenseInput>
+}
+
+export type UserUpdateWithoutOneTimeExpenseInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  categories?: Prisma.CategoryUpdateManyWithoutUserNestedInput
+  fixedExpense?: Prisma.FixedExpenseUpdateManyWithoutUserNestedInput
+  incomeSource?: Prisma.IncomeSourceUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutOneTimeExpenseInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  categories?: Prisma.CategoryUncheckedUpdateManyWithoutUserNestedInput
+  fixedExpense?: Prisma.FixedExpenseUncheckedUpdateManyWithoutUserNestedInput
+  incomeSource?: Prisma.IncomeSourceUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -592,12 +689,14 @@ export type UserCountOutputType = {
   categories: number
   fixedExpense: number
   incomeSource: number
+  oneTimeExpense: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   categories?: boolean | UserCountOutputTypeCountCategoriesArgs
   fixedExpense?: boolean | UserCountOutputTypeCountFixedExpenseArgs
   incomeSource?: boolean | UserCountOutputTypeCountIncomeSourceArgs
+  oneTimeExpense?: boolean | UserCountOutputTypeCountOneTimeExpenseArgs
 }
 
 /**
@@ -631,6 +730,13 @@ export type UserCountOutputTypeCountIncomeSourceArgs<ExtArgs extends runtime.Typ
   where?: Prisma.IncomeSourceWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountOneTimeExpenseArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.OneTimeExpenseWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -642,6 +748,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   categories?: boolean | Prisma.User$categoriesArgs<ExtArgs>
   fixedExpense?: boolean | Prisma.User$fixedExpenseArgs<ExtArgs>
   incomeSource?: boolean | Prisma.User$incomeSourceArgs<ExtArgs>
+  oneTimeExpense?: boolean | Prisma.User$oneTimeExpenseArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -677,6 +784,7 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   categories?: boolean | Prisma.User$categoriesArgs<ExtArgs>
   fixedExpense?: boolean | Prisma.User$fixedExpenseArgs<ExtArgs>
   incomeSource?: boolean | Prisma.User$incomeSourceArgs<ExtArgs>
+  oneTimeExpense?: boolean | Prisma.User$oneTimeExpenseArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -688,6 +796,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     categories: Prisma.$CategoryPayload<ExtArgs>[]
     fixedExpense: Prisma.$FixedExpensePayload<ExtArgs>[]
     incomeSource: Prisma.$IncomeSourcePayload<ExtArgs>[]
+    oneTimeExpense: Prisma.$OneTimeExpensePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1093,6 +1202,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   categories<T extends Prisma.User$categoriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$categoriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   fixedExpense<T extends Prisma.User$fixedExpenseArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$fixedExpenseArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FixedExpensePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   incomeSource<T extends Prisma.User$incomeSourceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$incomeSourceArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$IncomeSourcePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  oneTimeExpense<T extends Prisma.User$oneTimeExpenseArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$oneTimeExpenseArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OneTimeExpensePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1599,6 +1709,30 @@ export type User$incomeSourceArgs<ExtArgs extends runtime.Types.Extensions.Inter
   take?: number
   skip?: number
   distinct?: Prisma.IncomeSourceScalarFieldEnum | Prisma.IncomeSourceScalarFieldEnum[]
+}
+
+/**
+ * User.oneTimeExpense
+ */
+export type User$oneTimeExpenseArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the OneTimeExpense
+   */
+  select?: Prisma.OneTimeExpenseSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the OneTimeExpense
+   */
+  omit?: Prisma.OneTimeExpenseOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OneTimeExpenseInclude<ExtArgs> | null
+  where?: Prisma.OneTimeExpenseWhereInput
+  orderBy?: Prisma.OneTimeExpenseOrderByWithRelationInput | Prisma.OneTimeExpenseOrderByWithRelationInput[]
+  cursor?: Prisma.OneTimeExpenseWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.OneTimeExpenseScalarFieldEnum | Prisma.OneTimeExpenseScalarFieldEnum[]
 }
 
 /**
