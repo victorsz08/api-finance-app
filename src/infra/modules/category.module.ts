@@ -25,7 +25,7 @@ const listCategoryRoute = ListCategoryRoute.build(listCategoryService);
 const updateCategoryRoute = UpdateCategoryRoute.build(updateCategoryService);
 const deleteCategoryRoute = DeleteCategoryRoute.build(deleteCategoryService);
 
-export const categoryModule = [
+export const CategoryModule = [
     createCategoryRoute,
     findCategoryRoute,
     listCategoryRoute,

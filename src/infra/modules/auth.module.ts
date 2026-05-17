@@ -19,7 +19,7 @@ const authRefreshRoute = AuthRefreshRoute.build(authRefreshService);
 const authSessionRoute = AuthSessionRoute.build(findUserService);
 const authLogoutRoute = AuthLogoutRoute.build();
 
-export const authModule = [
+export const AuthModule = [
     authLoginRoute,
     authRefreshRoute,
     authSessionRoute,

@@ -35,7 +35,7 @@ const listFixedExpenseRoute = ListFixedExpenseRoute.build(listFixedExpenseServic
 const updateFixedExpenseRoute = UpdateFixedExpenseRoute.build(updateFixedExpenseService);
 const deleteFixedExpenseRoute = DeleteFixedExpenseRoute.build(deleteFixedExpenseService);
 
-export const fixedExpenseModule = [
+export const FixedExpenseModule = [
     createFixedExpenseRoute,
     findFixedExpenseRoute,
     listFixedExpenseRoute,

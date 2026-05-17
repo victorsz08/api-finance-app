@@ -1,17 +1,19 @@
 import { ApiExpress } from "./infra/api/express/api.express";
-import { authModule } from "./infra/modules/auth.module";
-import { categoryModule } from "./infra/modules/category.module";
-import { fixedExpenseModule } from "./infra/modules/fixed_expense.module";
-import { incomeSourceModule } from "./infra/modules/income_source.module";
+import { AuthModule } from "./infra/modules/auth.module";
+import { CategoryModule } from "./infra/modules/category.module";
+import { FixedExpenseModule } from "./infra/modules/fixed_expense.module";
+import { IncomeSourceModule } from "./infra/modules/income_source.module";
+import { OneTimeExpenseModule } from "./infra/modules/one_time_expense.module";
 import { userModule } from "./infra/modules/user.module";
 
 function main() {
     const api = ApiExpress.build([
         ...userModule,
-        ...authModule,
-        ...categoryModule,
-        ...fixedExpenseModule,
-        ...incomeSourceModule,
+        ...AuthModule,
+        ...CategoryModule,
+        ...FixedExpenseModule,
+        ...IncomeSourceModule,
+        ...OneTimeExpenseModule,
     ]);
 
     api.start(3333);

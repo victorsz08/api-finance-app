@@ -35,7 +35,7 @@ const listIncomeSourceRoute = ListIncomeSourceRoute.build(listIncomeSourceServic
 const updateIncomeSourceRoute = UpdateIncomeSourceRoute.build(updateIncomeSourceService);
 const deleteIncomeSourceRoute = DeleteIncomeSourceRoute.build(deleteIncomeSourceService);
 
-export const incomeSourceModule = [
+export const IncomeSourceModule = [
     createIncomeSourceRoute,
     findIncomeSourceRoute,
     listIncomeSourceRoute,
